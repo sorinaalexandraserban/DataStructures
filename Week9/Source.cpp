@@ -57,6 +57,7 @@ void ReHeapUp(Heap heap, int child)
 			Student* aux = heap.items[child];
 			heap.items[child] = heap.items[parent];
 			heap.items[parent] = aux;
+			ReHeapUp(heap, parent);
 		}
 	}
 }
@@ -110,12 +111,10 @@ void main()
 			heap = addStudent(heap, stud);
 		}
 		for (int i = 0; i < heap.noElements; i++)
-			printf("Key: %d - Name: %s - Group: %d \n", key, name, group);
+			printf("Key: %d - Name: %s - Group: %d \n", 
+			      heap.items[i]->key, 
+			      heap.items[i]->name, 
+			      heap.items[i]->groupNo););
 		fclose(pFile);
 	}
 }
-
-//de extragere student din heap
-//getstudent
-//a lua niste studenti, sa ii punem in vect si sa folosim heap pt a face sortare
-//folosim lista pt studenti si pe baza listei sa sortam elem
