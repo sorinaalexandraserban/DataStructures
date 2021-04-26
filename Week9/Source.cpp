@@ -114,7 +114,7 @@ void main()
 			printf("Key: %d - Name: %s - Group: %d \n", 
 			      heap.items[i]->key, 
 			      heap.items[i]->name, 
-			      heap.items[i]->groupNo););
+			      heap.items[i]->groupNo);
 		fclose(pFile);
 	}
 }
